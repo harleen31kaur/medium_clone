@@ -1,0 +1,83 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-box">
+            <h2 id="auth-title">Welcome back.</h2>
+            <div class="buttons">
+                <button class="auth-btn google">
+                    <img src="search.png" alt="Google Logo"> 
+                    Sign in with Google
+                </button>
+                <button class="auth-btn facebook">
+                    <img src="facebook.png" alt="Facebook Logo"> 
+                    Sign in with Facebook
+                </button>
+                <button class="auth-btn apple">
+                    <img src="apple-logo.png" alt="Apple logo"> 
+                    Sign in with Apple
+                </button>
+                <button class="auth-btn twitter">
+                    <img src="twitter.png" alt="Twitter Icon"> 
+                    Sign in with Twitter
+                </button>
+                <button class="auth-btn email">
+                    <img src="mail.png" alt="Email Icon"> 
+                    Sign in with email
+                </button>
+            </div>
+            <p id="toggle-link">No account? <a href="#" onclick="toggleAuthForm()">Create One</a></p>
+        </div>
+
+        <div class="terms">
+            <p>Forgot email or trouble signing in? <a href="#">Get help.</a></p>
+            <br>
+            <p>Click “Sign in” to agree to Medium’s <a href="#">Terms of Service</a> and acknowledge that Medium's <a href="#">Privacy Policy</a> applies to you.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAuthForm() {
+            const title = document.getElementById('auth-title');
+            const toggleText = document.getElementById('toggle-link');
+            const buttons = document.querySelectorAll('.auth-btn');
+
+            if (title.textContent === 'Join Medium.') {
+                // Change to 'Sign in' state
+                title.textContent = 'Welcome back.';
+                toggleText.innerHTML = 'No account? <a href="#" onclick="toggleAuthForm()">Create one</a>';
+                buttons[0].textContent = 'Sign in with Google';
+                buttons[1].textContent = 'Sign in with Facebook';
+                buttons[2].textContent = 'Sign in with Apple';
+                buttons[3].textContent = 'Sign in with Twitter';
+                buttons[4].textContent = 'Sign in with email';
+            } else {
+                // Change to 'Sign up' state
+                title.textContent = 'Join Medium.';
+                toggleText.innerHTML = 'Already have an account? <a href="#" onclick="toggleAuthForm()">Sign in</a>';
+                buttons[0].textContent = 'Sign up with Google';
+                buttons[1].textContent = 'Sign up with Facebook';
+                // buttons[2].textContent = 'Sign up with Apple';
+                // buttons[3].textContent = 'Sign up with Twitter';
+                buttons[4].textContent = 'Sign up with email';
+            }
+        }
+    </script>
+</body>
+</html>
